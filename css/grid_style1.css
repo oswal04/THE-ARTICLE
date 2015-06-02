@@ -1,0 +1,426 @@
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../images/bg.jpg);
+  background-attachment: fixed;
+  background-size:cover;
+  color: #7b7b7b;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Martel Sans", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  overflow-y: scroll;
+  /* force scroll to appear */
+}
+
+/* helper class when showing content */
+
+a {
+  outline: none;
+  color: #81c483;
+  text-decoration: none;
+}
+
+
+
+
+/* Sidebar */
+.sidebar {
+  text-align: center;
+  background: transparent;
+  z-index: 1000;
+  position: fixed;
+  width: 300px;
+  max-width: 100%;
+  height: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding: 2em 1em;
+  color: white;
+  font-family: 'Courgette';
+  font-size: large;
+}
+
+.sidebar {
+  text-align: center;
+  background: transparent;
+  z-index: 1000;
+  position: fixed;
+  width: 35%;
+  max-width: 25%;
+  height: 100%;
+  margin-left:3%;
+  margin-top: 10%;
+  left: 0;
+  padding: 2em 1em;
+  color: white;
+  text-shadow: 2px 2px 6px black;
+
+}
+.sidebar h1 {
+  margin: 0.75em 0 0;
+  font-size: 2em;
+  line-height: 1;
+  font-family: "Playfair Display", serif;
+}
+
+.sidebar h1 span {
+  display: block;
+}
+
+
+/* Top bar above the grid */
+.top-bar {
+  background: #fff;
+  width: 100%;
+  line-height: 1;
+  padding: 15px 15px 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.top-bar__headline {
+  margin: 0;
+  font-size: 0.75em;
+}
+
+/* Grid item */
+.grid__item {
+  padding: 45px 55px 30px;
+  position: relative;
+  color: black;
+  opacity:0.85;
+  background: #fff;
+  min-height: 300px;
+  cursor: pointer;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  justify-content: center;
+  float:left;
+  overflow:hidden;
+}
+
+.grid__item:hover{
+      opacity:1;
+}
+
+/* Grid item "border" */
+.grid__item::before {
+  position: absolute;
+  content: '';
+  top: 0px;
+  right: 55px;
+  bottom: 0px;
+  left: 55px;
+  border-bottom: 1px solid rgba(74, 74, 74, 0.075);
+}
+
+.grid__item * {
+  z-index: 10;
+}
+
+
+@media screen and (min-width: 600px) {
+  html,
+  body,
+  .container,
+  .main {
+    height: 100vh;
+  }
+
+  .main {
+    height: 100%;
+    margin-left: 300px;
+  }
+  
+}
+@media screen and (min-width: 900px) {
+    .grid {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    /* 2 columns */
+    .grid__item {
+        width: 50%;
+        border: none;
+    }
+
+        .grid__item::before {
+            top: 5px;
+            right: 5px;
+            bottom: 5px;
+            left: 5px;
+            border: 1px solid rgba(74, 74, 74, 0.075);
+            -webkit-transition: opacity 0.3s;
+            transition: opacity 0.3s;
+        }
+}
+/* small screen changes for sidebar (it becomes an off-canvas menu) */
+@media screen and (max-width: 599px) {
+  .sidebar {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+  }
+
+  .sidebar.sidebar--open {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  .sidebar.sidebar--open ~ .main {
+    pointer-events: none;
+  }
+
+  .top-bar {
+    padding: 22px 15px 10px 60px;
+  }  
+}
+
+    
+.myButton {
+	-moz-box-shadow:inset 0px 0px 15px 3px #23395e;
+	-webkit-box-shadow:inset 0px 0px 15px 3px #23395e;
+	box-shadow:inset 0px 0px 15px 3px #23395e;
+	background-color:#2e466e;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	border:1px solid #1f2f47;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: 'Courgette';
+    font-size: large;
+	padding:8px 47px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+}
+.myButton:hover {
+	background-color:#415989;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+.forUl {
+    width: 100%;
+    min-height: 150px;
+}
+
+.aUl {
+    margin-top: 4%;
+    padding: 0;
+    list-style-type: none;
+    margin-left: auto;
+    text-align: center;
+    word-spacing: 25px;
+    float: right;
+    font-size: large;
+    margin-right: 5%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    overflow: hidden;
+}
+
+.lip {
+    text-shadow: 2px 2px 6px black;
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.scroll {
+    width: 100%;
+    height: 20px;
+    position: fixed;
+}
+
+.forUpScroll {
+    min-height: 40px;
+    width: 5%;
+    border-radius: 20px;
+    float: left;
+    margin-left: 1%;
+    cursor:pointer;
+}
+
+.forDwnScroll {
+    min-height: 40px;
+    width: 5%;
+    border-radius: 20px;
+    float: right;
+    margin-right: 1.5%;
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  height: 28px;
+  width: 150px;
+  background: #f2f2f2;
+  border: 1px solid;
+  border-color: darkgrey #f7f7f7 whitesmoke;
+  border-radius: 3px;
+  background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
+  background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
+  background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.06));
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+}
+
+.dropdown:before, .dropdown:after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: 9px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 4px dashed;
+  border-color: #888888 transparent;
+  pointer-events: none;
+}
+
+.dropdown:before {
+  border-bottom-style: solid;
+  border-top: none;
+}
+
+.dropdown:after {
+  margin-top: 7px;
+  border-top-style: solid;
+  border-bottom: none;
+}
+
+.dropdown-select {
+  position: relative;
+  width: 130%;
+  margin: 0;
+  padding: 6px 8px 6px 10px;
+  height: 28px;
+  line-height: 14px;
+  font-size: 12px;
+  color: #62717a;
+  text-shadow: 0 1px white;
+  background: #f2f2f2; /* Fallback for IE 8 */
+  background: rgba(0, 0, 0, 0) !important; /* "transparent" doesn't work with Opera */
+  border: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+.dropdown-select:focus {
+  z-index: 3;
+  width: 100%;
+  color: #394349;
+  outline: 2px solid #49aff2;
+  outline: 2px solid -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.dropdown-select > option {
+  margin: 3px;
+  padding: 6px 8px;
+  text-shadow: none;
+  background: #f2f2f2;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Fix for IE 8 putting the arrows behind the select element. */
+
+.dropdown {
+  z-index: 1;
+}
+
+.lt-ie9 .dropdown-select {
+  z-index: -1;
+}
+
+.dropdown-dark {
+  background: #444;
+  border-color: #111111 #0a0a0a black;
+  background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
+  background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
+  background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-dark:before {
+  border-bottom-color: #aaa;
+}
+
+.dropdown-dark:after {
+  border-top-color: #aaa;
+}
+
+.dropdown-dark .dropdown-select {
+  color: #aaa;
+  text-shadow: 0 1px black;
+  background: #444;  /* Fallback for IE 8 */
+}
+
+.dropdown-dark .dropdown-select:focus {
+  color: #ccc;
+}
+
+.dropdown-dark .dropdown-select > option {
+  background: #444;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (min-width:320px) {
+
+    .aUl {
+        margin-right: 2%;
+        font-size: medium;
+        /*                font-family: 'Philosopher'; */
+        font-family: 'Raleway', sans-serif;
+        font-weight: 500;
+        margin-left: auto;
+    }
+}
